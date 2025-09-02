@@ -14,7 +14,6 @@ let lastTopUpdate = 0;
 let allCoins = [];
 let lastAllUpdate = 0;
 
-// ========================== API ==========================
 async function getTopCoins() {
   const now = Date.now();
   if (topCoins.length && now - lastTopUpdate < 30 * 60 * 1000) return topCoins;
