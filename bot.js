@@ -9,6 +9,7 @@ const bot = new TelegramBot(TOKEN, { polling: true });
 const userJobs = {};
 const userCurrencies = {};
 
+let test = null
 let topCoins = [];
 let lastTopUpdate = 0;
 let allCoins = [];
