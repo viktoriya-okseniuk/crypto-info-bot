@@ -23,6 +23,7 @@ async function getTopCoins() {
       'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1'
     );
     const data = await res.json();
+    console.log("DEBUG CoinGecko response:", data);
     topCoins = data.map(c => ({ id: c.id, symbol: c.symbol, name: c.name }));
     lastTopUpdate = now;
     return topCoins;
