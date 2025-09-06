@@ -187,7 +187,7 @@ async function sendNow(chatId) {
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
   bot.sendMessage(chatId, 'Привіт! Обери дію:', {
-    reply_markup: { keyboard: [['Отримати курс зараз', 'Встановити інтервал'], ['Вибрати валюти123', '📊 Графік']], resize_keyboard: true }
+    reply_markup: { keyboard: [['Отримати курс зараз', 'Встановити інтервал'], ['Вибрати валюти', '📊 Графік']], resize_keyboard: true }
   });
 });
 
