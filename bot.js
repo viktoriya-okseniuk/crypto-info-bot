@@ -59,7 +59,6 @@ async function getTopCoins() {
       'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1'
     );
     const data = await res.json();
-    console.log('data', data)
     if (!Array.isArray(data)) {
       console.error('CoinGecko error:', data);
       return topCoins;
@@ -81,7 +80,6 @@ async function getAllCoins() {
   try {
     const res = await fetch('https://api.coingecko.com/api/v3/coins/list');
     const data = await res.json();
-    console.log('data getAllCoins', data)
 
     if (!Array.isArray(data)) {
       console.error('CoinGecko error:', data);
@@ -108,7 +106,6 @@ async function getCryptoPrices(selectedCurrencies = []) {
       `https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`
     );
     const data = await res.json();
-    console.log('data getCryptoPrices', data)
 
     let prices = '';
     for (const coin of selectedCurrencies) {
@@ -133,7 +130,6 @@ async function getChart(coinId, days) {
       `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=${days}`
     );
     const data = await res.json();
-    console.log('data getChart', data)
 
     if (!data.prices) {
       console.error('Помилка CoinGecko графік:', data);
