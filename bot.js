@@ -203,7 +203,6 @@ bot.on('message', async (msg) => {
     bot.sendMessage(chatId, 'Введи інтервал у форматі ГГ:ХХ:СС, наприклад 02:30:00');
   } else if (/^\d{1,2}:\d{2}:\d{2}$/.test(text)) {
     const [h, m, s] = text.split(':').map(Number);
-    if (h >= 24 || m >= 60 || s >= 60) return bot.sendMessage(chatId, 'Некоректний час. Використовуй формат ГГ:ХХ:СС');
 
     if (userJobs[chatId]) clearInterval(userJobs[chatId]);
     const intervalMs = ((h * 3600 + m * 60 + s) * 1000);
